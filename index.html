@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MENU BREAK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Caveat:wght@600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #24170F;
+    --bg-2: #2E1D12;
+    --cream: #F3E7D3;
+    --cream-dim: #CBB699;
+    --gold: #CE9A5C;
+    --gold-soft: #B98A50;
+    --line: rgba(243,231,211,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(206,154,92,0.10), transparent 45%),
+      radial-gradient(circle at 100% 100%, rgba(206,154,92,0.06), transparent 40%);
+    color: var(--cream);
+    font-family: 'Cairo', sans-serif;
+    padding-bottom: 50px;
+  }
+
+  header{
+    text-align:center;
+    padding: 40px 20px 30px;
+  }
+  .badge{
+    width: 110px; height: 110px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    overflow: hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+  .badge img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  h1{
+    font-family:'Playfair Display', serif;
+    font-size: 26px;
+    letter-spacing: 6px;
+    color: var(--cream-dim);
+    font-weight: 700;
+  }
+  h1 .big{
+    display:block;
+    font-family:'Caveat', cursive;
+    font-size: 68px;
+    letter-spacing: 2px;
+    color: var(--cream);
+    margin-top: -6px;
+    font-weight:700;
+  }
+  .tagline{
+    font-family:'Cairo', sans-serif;
+    color: var(--gold);
+    font-size: 20px;
+    font-weight:700;
+    margin-top: 12px;
+  }
+
+  main{
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .grid-2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 46px;
+  }
+  section.category{
+    padding-top: 34px;
+  }
+  .cat-heading{
+    text-align:center;
+    margin-bottom: 18px;
+  }
+  .cat-heading h2{
+    font-family:'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--gold);
+    font-weight:700;
+    display:inline-block;
+    padding-bottom:8px;
+    border-bottom: 2px solid var(--gold-soft);
+  }
+
+  .item{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    padding: 9px 2px;
+  }
+  .item-name{
+    font-size:15.5px;
+    font-weight:600;
+    color: var(--cream);
+    white-space:nowrap;
+  }
+  .item-name .ar{
+    color: var(--cream-dim);
+    font-weight:500;
+    font-size:14px;
+    margin-right:6px;
+  }
+  .leader{
+    flex:1;
+    border-bottom: 2px dotted var(--line);
+    margin: 0 4px;
+    height:0;
+    min-width: 10px;
+  }
+  .price{
+    font-weight:800;
+    font-size: 15.5px;
+    color: var(--gold);
+    white-space:nowrap;
+  }
+
+  .note{
+    text-align:center;
+    font-family:'Caveat', cursive;
+    font-size: 26px;
+    color: var(--cream-dim);
+    padding-top: 34px;
+    line-height:1.3;
+  }
+
+  .sweets{
+    padding-top: 46px;
+  }
+  .sweets-heading{
+    display:grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    text-align:center;
+    margin-bottom: 6px;
+  }
+  .sweets-heading h3{
+    font-family:'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 21px;
+  }
+  .sweets-heading .mid h3{
+    font-size:25px;
+  }
+  .sub-cols{
+    display:grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    text-align:center;
+    font-size:12px;
+    color: var(--cream-dim);
+    margin-bottom: 10px;
+  }
+  table.sweets-table{
+    width:100%;
+    border-collapse: collapse;
+  }
+  table.sweets-table td{
+    padding: 9px 4px;
+    border-bottom: 1px dashed var(--line);
+    font-size: 14.5px;
+    text-align:center;
+  }
+  table.sweets-table td.flavor{
+    text-align:center;
+    font-weight:700;
+    color: var(--cream);
+  }
+  table.sweets-table td.price-cell{
+    color: var(--gold);
+    font-weight:800;
+  }
+
+  .additions{
+    margin-top: 30px;
+    text-align:center;
+  }
+  .additions h4{
+    font-family:'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 17px;
+    margin-bottom: 14px;
+  }
+  .additions-row{
+    display:flex;
+    justify-content:center;
+    gap: 34px;
+    flex-wrap:wrap;
+    font-size:14.5px;
+  }
+  .additions-row span.price{ margin-right:6px; }
+
+  footer{
+    text-align:center;
+    margin-top: 50px;
+    padding: 26px 20px 0;
+    border-top: 1px solid var(--line);
+    color: var(--cream-dim);
+    font-size: 14px;
+  }
+  footer .phone{
+    color: var(--cream);
+    font-weight:700;
+    margin-bottom:6px;
+    letter-spacing:1px;
+  }
+
+  @media (max-width: 620px){
+    .grid-2{ grid-template-columns: 1fr; gap:0; }
+    section.category{ padding-top: 30px; }
+    h1 .big{ font-size: 54px; }
+    .sweets-heading, .sub-cols{ grid-template-columns: 1fr 1.1fr 1fr; }
+    .sweets-heading h3{ font-size:16px; }
+    .sweets-heading .mid h3{ font-size:19px; }
+    table.sweets-table td{ font-size:12.5px; padding:8px 2px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">
+    <img src="logo.png" alt="Break Logo">
+  </div>
+  <h1>MENU<span class="big">Break</span></h1>
+  <div class="tagline">بريك يكمل يومك</div>
+</header>
+
+<main>
+
+  <div class="grid-2">
+    <section class="category" id="hot-coffee">
+      <div class="cat-heading"><h2>Hot Coffee</h2></div>
+      <div class="item"><div class="item-name">Turkey Coffee <span class="ar">قهوة تركي</span></div><div class="leader"></div><div class="price">30</div></div>
+      <div class="item"><div class="item-name">French Coffee <span class="ar">قهوة فرنساوي</span></div><div class="leader"></div><div class="price">40</div></div>
+      <div class="item"><div class="item-name">Hazelnut Coffee <span class="ar">قهوة بالبندق</span></div><div class="leader"></div><div class="price">40</div></div>
+      <div class="item"><div class="item-name">Espresso Single <span class="ar">اسبريسو سنجل</span></div><div class="leader"></div><div class="price">35</div></div>
+      <div class="item"><div class="item-name">Espresso Double <span class="ar">اسبريسو دبل</span></div><div class="leader"></div><div class="price">45</div></div>
+      <div class="item"><div class="item-name">Hot Spanish Latte <span class="ar">لاتيه ساخن</span></div><div class="leader"></div><div class="price">60</div></div>
+      <div class="item"><div class="item-name">Americano <span class="ar">امريكانو</span></div><div class="leader"></div><div class="price">60</div></div>
+      <div class="item"><div class="item-name">Mocha <span class="ar">موكا</span></div><div class="leader"></div><div class="price">60</div></div>
+      <div class="item"><div class="item-name">Macchiato <span class="ar">ميكاتو</span></div><div class="leader"></div><div class="price">60</div></div>
+    </section>
+
+    <section class="category" id="cold-coffee">
+      <div class="cat-heading"><h2>Cold Coffee</h2></div>
+      <div class="item"><div class="item-name">Ice Coffee <span class="ar">ايس كوفي</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Ice Americano <span class="ar">ايس امريكانو</span></div><div class="leader"></div><div class="price">60</div></div>
+      <div class="item"><div class="item-name">Ice Spanish Latte <span class="ar">ايس لاتيه</span></div><div class="leader"></div><div class="price">60</div></div>
+      <div class="item"><div class="item-name">Ice Mocha <span class="ar">ايس موكا</span></div><div class="leader"></div><div class="price">60</div></div>
+      <div class="item"><div class="item-name">Ice Macchiato <span class="ar">ايس ميكاتو</span></div><div class="leader"></div><div class="price">60</div></div>
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="category" id="fresh-juice">
+      <div class="cat-heading"><h2>Fresh Juice</h2></div>
+      <div class="item"><div class="item-name">Mango <span class="ar">مانجو</span></div><div class="leader"></div><div class="price">45</div></div>
+      <div class="item"><div class="item-name">Guava <span class="ar">جوافة</span></div><div class="leader"></div><div class="price">40</div></div>
+      <div class="item"><div class="item-name">Lemon <span class="ar">ليمون</span></div><div class="leader"></div><div class="price">35</div></div>
+      <div class="item"><div class="item-name">Mint Lemon <span class="ar">ليمون نعناع</span></div><div class="leader"></div><div class="price">30</div></div>
+      <div class="item"><div class="item-name">Mojito <span class="ar">موخيتو</span></div><div class="leader"></div><div class="price">35</div></div>
+      <div class="item"><div class="item-name">Orange <span class="ar">برتقال</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Strawberry <span class="ar">فراولة</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Blueberry <span class="ar">توت</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Banana Milk <span class="ar">موز باللبن</span></div><div class="leader"></div><div class="price">40</div></div>
+      <div class="item"><div class="item-name">Banana Strawberry <span class="ar">موز بالفراولة</span></div><div class="leader"></div><div class="price">50</div></div>
+    </section>
+
+    <section class="category" id="hot-drinks">
+      <div class="cat-heading"><h2>Hot Drinks</h2></div>
+      <div class="item"><div class="item-name">Nescafe Black <span class="ar">نسكافيه بلاك</span></div><div class="leader"></div><div class="price">30</div></div>
+      <div class="item"><div class="item-name">Nescafe <span class="ar">نسكافيه</span></div><div class="leader"></div><div class="price">35</div></div>
+      <div class="item"><div class="item-name">Cappuccino <span class="ar">كابتشينو</span></div><div class="leader"></div><div class="price">40</div></div>
+      <div class="item"><div class="item-name">Hot Chocolate <span class="ar">هوت شوكليت</span></div><div class="leader"></div><div class="price">40</div></div>
+      <div class="note">It's time<br>to take a break.</div>
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="category" id="milk-shake">
+      <div class="cat-heading"><h2>Milk Shake</h2></div>
+      <div class="item"><div class="item-name">Vanilla <span class="ar">فانيليا</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Chocolate <span class="ar">شوكليت</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Strawberry <span class="ar">فراولة</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Mango <span class="ar">مانجو</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Oreo <span class="ar">اوريو</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Breo <span class="ar">بوريو</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Lotus <span class="ar">لوتس</span></div><div class="leader"></div><div class="price">60</div></div>
+    </section>
+
+    <section class="category" id="smoothie">
+      <div class="cat-heading"><h2>Smoothie</h2></div>
+      <div class="item"><div class="item-name">Mango <span class="ar">مانجو</span></div><div class="leader"></div><div class="price">60</div></div>
+      <div class="item"><div class="item-name">Lemon <span class="ar">ليمون</span></div><div class="leader"></div><div class="price">40</div></div>
+      <div class="item"><div class="item-name">Lemon Mint <span class="ar">ليمون نعناع</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Strawberry <span class="ar">فراولة</span></div><div class="leader"></div><div class="price">50</div></div>
+      <div class="item"><div class="item-name">Blueberry <span class="ar">توت</span></div><div class="leader"></div><div class="price">50</div></div>
+    </section>
+  </div>
+
+  <section class="sweets">
+    <div class="sweets-heading">
+      <h3>Waffle</h3>
+      <div class="mid"><h3>Desserts</h3><div style="color:var(--cream-dim); font-size:13px; margin-top:2px;">sauces</div></div>
+      <h3>Pancake</h3>
+    </div>
+    <div class="sub-cols">
+      <div>قطعتين | قطعة</div>
+      <div>قطعة 12</div>
+      <div>قطعة 25</div>
+    </div>
+    <table class="sweets-table">
+      <tr>
+        <td>70 | 40</td>
+        <td class="flavor">Nutella <span style="color:var(--cream-dim); font-weight:500;">نوتيلا</span></td>
+        <td class="price-cell">75</td>
+      </tr>
+      <tr>
+        <td>70 | 40</td>
+        <td class="flavor">White Nutella <span style="color:var(--cream-dim); font-weight:500;">وايت نوتيلا</span></td>
+        <td class="price-cell">80</td>
+      </tr>
+      <tr>
+        <td>85 | 50</td>
+        <td class="flavor">Lotus <span style="color:var(--cream-dim); font-weight:500;">لوتس</span></td>
+        <td class="price-cell">80</td>
+      </tr>
+      <tr>
+        <td>110 | 70</td>
+        <td class="flavor">Pistachio <span style="color:var(--cream-dim); font-weight:500;">فستق</span></td>
+        <td class="price-cell">110</td>
+      </tr>
+      <tr>
+        <td>85 | 50</td>
+        <td class="flavor">Kinder <span style="color:var(--cream-dim); font-weight:500;">كيندر</span></td>
+        <td class="price-cell">90</td>
+      </tr>
+      <tr>
+        <td>85 | 50</td>
+        <td class="flavor">Hazelnut <span style="color:var(--cream-dim); font-weight:500;">بندق</span></td>
+        <td class="price-cell">90</td>
+      </tr>
+    </table>
+
+    <div class="additions">
+      <h4>Additions الإضافات</h4>
+      <div class="additions-row">
+        <div><span class="price">20</span> Pistachio فستق</div>
+        <div><span class="price">15</span> Add Sauce إضافة صوص</div>
+        <div><span class="price">10</span> Lotus لوتس</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="phone">01500694343</div>
+  <div>مدينة طيبة - خلف مبنى الجهاز</div>
+</footer>
+
+</body>
+</html>
